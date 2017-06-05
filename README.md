@@ -12,17 +12,22 @@ Incase you want to mess around with it without doing all the hard stuff.
 
 # Documentation
 
-## Prerequisites:
-Java;
-For windows go to https://www.java.com/en/download/
-For Ubuntu or Debian-based distributions execute "sudo apt-get install default-jre" in the terminal
-There is a tutorial for installing java on Fedora and CentOS here https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora
 
-Youtube-dl;
+## Prerequisites:
+
+#### Java
+##### Windows
+download and install Java from https://www.java.com/en/download/  
+##### Debian-based Linux distributions
+For Ubuntu or Debian-based distributions execute `sudo apt-get install default-jre` in the terminal   
+##### Fedora and CentOS
+There is a tutorial for installing java on Fedora and CentOS at https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora   
+
+#### Youtube-dl;
 For windows download the .exe at https://yt-dl.org/latest/youtube-dl.exe and place it in C:\Windows
 
 ## Getting the project files:
-Windows;
+#### Windows
 There is two ways to get the files depending on what you prefer:
 A. 
 Download the zip directly here https://github.com/UnderMybrella/EternalJukebox/archive/master.zip and extract them in any folder you like e.g. C:\EternalJukebox
@@ -31,7 +36,7 @@ Install Git for Windows. https://git-scm.com/downloads
 After that open the Command Prompt, move to a folder you like to have the server files. For example you can type "CD C:\Github\" (Folder has to exist)
 Then you can just use the command "git clone https://github.com/UnderMybrella/EternalJukebox.git" and the files should download to the folder you executed the command in.
 
-Linux;
+#### Linux
 If you have a desktop environment you can just download the zip with the files directly here https://github.com/UnderMybrella/EternalJukebox/archive/master.zip and extract them in a folder you like.
 However it might be easier to use Git so you can update the files more easily!
 
@@ -45,9 +50,10 @@ If you're on a Debian-based distribution like Ubuntu use apt-get:
 After that you can move to a folder you'd like to keep the files using the cd command and then clone EternalJukebox to it with:
 "git clone https://github.com/UnderMybrella/EternalJukebox.git"
 
-Unless you want to build the Jar yourself with Gradle you need to download it here https://eternal.abimon.org/built.jar and place it in the folder containing default-config.json and jukebox_index.html
+#### Prebuilt jar
+Unless you want to build the jar yourself with Gradle you need to download it here https://eternal.abimon.org/built.jar and place it in the folder containing default-config.json and jukebox_index.html
 
-## Configuring:
+## Configuring
 First rename default_config.json to config.json and open it with notepad/notepad++ on windows or nano on linux "nano config.json"
 
 Now you should go to https://developer.spotify.com/my-applications/ and log in to your spotify account.

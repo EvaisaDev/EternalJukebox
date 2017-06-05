@@ -12,7 +12,7 @@ Incase you want to mess around with it without doing all the hard stuff.
 
 # Documentation
 
-Prerequisites:
+## Prerequisites:
 Java;
 For windows go to https://www.java.com/en/download/
 For Ubuntu or Debian-based distributions execute "sudo apt-get install default-jre" in the terminal
@@ -21,7 +21,7 @@ There is a tutorial for installing java on Fedora and CentOS here https://www.di
 Youtube-dl;
 For windows download the .exe at https://yt-dl.org/latest/youtube-dl.exe and place it in C:\Windows
 
-Getting the project files:
+## Getting the project files:
 Windows;
 There is two ways to get the files depending on what you prefer:
 A. 
@@ -47,7 +47,7 @@ After that you can move to a folder you'd like to keep the files using the cd co
 
 Unless you want to build the Jar yourself with Gradle you need to download it here https://eternal.abimon.org/built.jar and place it in the folder containing default-config.json and jukebox_index.html
 
-Configuring:
+## Configuring:
 First rename default_config.json to config.json and open it with notepad/notepad++ on windows or nano on linux "nano config.json"
 
 Now you should go to https://developer.spotify.com/my-applications/ and log in to your spotify account.
@@ -74,7 +74,7 @@ If you want this you need to replace the config content with this and fill this 
 
 When you are done save the config and move on to the next step.
 
-Starting the server:
+## Starting the server:
 
 Now you should be able to start the server,
 Open the terminal (or Command Prompt as Administrator on windows) and move to the folder you saved EternalJukebox.jar in, i.e. "cd C:\EternalJukebox"

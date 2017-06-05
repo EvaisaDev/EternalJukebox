@@ -15,7 +15,7 @@ Incase you want to mess around with it without doing all the hard stuff.
 
 ## Prerequisites:
 
-### Java
+### Java;
 ##### Windows
 download and install Java from https://www.java.com/en/download/  
 ##### Debian-based Linux distributions
@@ -24,7 +24,12 @@ For Ubuntu or Debian-based distributions execute `sudo apt-get install default-j
 There is a tutorial for installing java on Fedora and CentOS at https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora   
 
 ### Youtube-dl;
-For windows download the .exe at https://yt-dl.org/latest/youtube-dl.exe and place it in C:\Windows
+##### Windows
+Download the .exe at https://yt-dl.org/latest/youtube-dl.exe and place it in `C:\Windows\`
+##### Linux
+Use these commands in the terminal to install youtubedl on Linux:
+`sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl`   
+`sudo chmod a+rx /usr/local/bin/youtube-dl`
 
 ## Getting the project files:
 ### Windows

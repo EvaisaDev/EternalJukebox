@@ -27,7 +27,7 @@ There is a tutorial for installing java on Fedora and CentOS at https://www.digi
 ##### Windows
 Download the .exe at https://yt-dl.org/latest/youtube-dl.exe and place it in `C:\Windows\`
 ##### Linux
-Use these commands in the terminal to install youtubedl on Linux:
+Use these commands in the terminal to install youtubedl on Linux:  
 `sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl`   
 `sudo chmod a+rx /usr/local/bin/youtube-dl`
 

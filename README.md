@@ -56,7 +56,7 @@ However it might be better to use Git so you can update the files more easily!
 You can generally install Git tools through the package-management tool that comes with your linux distribution.   
 
 For example on **Fedora** you can use `sudo dnf install git-all`  
-And on **Debian/Ubuntu** you can use `sudo apt-get install git-all"`  
+And on **Debian/Ubuntu** you can use `sudo apt-get install git-all`  
 
 After that you can move to a folder you'd like to keep the files using the `cd` command and then clone EternalJukebox to it with:  
 `git clone https://github.com/UnderMybrella/EternalJukebox.git`  
@@ -103,7 +103,7 @@ When you are done save the config and move on to the next step.
 
 First you need to open the Terminal or Command Prompt.  
 Then make sure its running in the folder that your EternalJukebox.jar is in, once again to do this use the `cd` command.  
-Then execute the jar with `java -jar EternalJukebox.jar` or `sudo java -jar EternalJukebox.jar` on linux.  
+Then execute the jar with `java -jar EternalJukebox.jar`
 
 If everything went right it should say `Listening at http://0.0.0.0:11037`  
 
@@ -118,7 +118,7 @@ There is a full documentation on how to do this here https://gradle.org/install
 Open a Command Prompt as Administrator or Terminal on linux and move to the folder you cloned the project files to earlier. 
 E.g. `cd C:\EternalJukebox`  
 
-Now use the command `gradle clean shadowJar` or on Linux `sudo gradle clean shadowJar`
+Now use the command `gradle clean shadowJar`
 And it should start building!
 
 Once this is finished move the .jar from build/libs/ to the project folder and rename it to EternalJukebox.jar

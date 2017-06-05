@@ -15,7 +15,7 @@ Incase you want to mess around with it without doing all the hard stuff.
 
 ## Prerequisites:
 
-#### Java
+### Java
 ##### Windows
 download and install Java from https://www.java.com/en/download/  
 ##### Debian-based Linux distributions
@@ -23,11 +23,11 @@ For Ubuntu or Debian-based distributions execute `sudo apt-get install default-j
 ##### Fedora and CentOS
 There is a tutorial for installing java on Fedora and CentOS at https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora   
 
-#### Youtube-dl;
+### Youtube-dl;
 For windows download the .exe at https://yt-dl.org/latest/youtube-dl.exe and place it in C:\Windows
 
 ## Getting the project files:
-#### Windows
+### Windows
 There is two ways to get the files depending on what you prefer:
 A. 
 Download the zip directly here https://github.com/UnderMybrella/EternalJukebox/archive/master.zip and extract them in any folder you like e.g. C:\EternalJukebox
@@ -36,7 +36,7 @@ Install Git for Windows. https://git-scm.com/downloads
 After that open the Command Prompt, move to a folder you like to have the server files. For example you can type "CD C:\Github\" (Folder has to exist)
 Then you can just use the command "git clone https://github.com/UnderMybrella/EternalJukebox.git" and the files should download to the folder you executed the command in.
 
-#### Linux
+### Linux
 If you have a desktop environment you can just download the zip with the files directly here https://github.com/UnderMybrella/EternalJukebox/archive/master.zip and extract them in a folder you like.
 However it might be easier to use Git so you can update the files more easily!
 

@@ -1,15 +1,13 @@
 # EternalJukebox
 
 
-The source files for the EternalJukebox, a rehosting of the Infinite Jukebox.
+The source files for the EternalJukebox, a rehosting of the Infinite Jukebox.  
+This repo contains everything you need to host the EternalJukebox on your own server!  
 
-This repo contains everything you need to host the EternalJukebox on your own server!
 
-You can visit the official site here:
-
-https://eternal.abimon.org/
-
-Incase you want to mess around with it without doing all the hard stuff.
+You can visit the official site here:  
+https://eternal.abimon.org/  
+Incase you want to mess around with it without doing all the hard stuff.  
 
 
 # Documentation

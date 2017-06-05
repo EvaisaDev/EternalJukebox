@@ -117,8 +117,9 @@ There is a full documentation on how to do this here https://gradle.org/install
 
 Open a Command Prompt as Administrator or Terminal on linux and move to the folder you cloned the project files to earlier. 
 E.g. `cd C:\EternalJukebox`  
+
 Now use the command `gradle clean shadowJar` or on Linux `sudo gradle clean shadowJar`
-It should start building!
+And it should start building!
 
 Once this is finished move the .jar from build/libs/ to the project folder and rename it to EternalJukebox.jar
 

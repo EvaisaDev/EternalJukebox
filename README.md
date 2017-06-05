@@ -1,8 +1,9 @@
 # EternalJukebox
 
 
-The source files for the EternalJukebox, a rehosting of the Infinite Jukebox.  
-This repo contains everything you need to host the EternalJukebox on your own server!  
+This repo contains my own version of the EternalJukebox, a rehosting of the Infinite Jukebox.  
+You can find the offical repo at https://github.com/UnderMybrella/EternalJukebox
+This is basically a simplified version of the website.
 
 
 You can visit the official site here:  

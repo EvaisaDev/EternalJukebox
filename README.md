@@ -13,9 +13,9 @@ Incase you want to mess around with it without doing all the hard stuff.
 # Documentation
 
 
-## Prerequisites:
+## Prerequisites
 
-### Java;
+### Java:
 ##### Windows
 download and install Java from https://www.java.com/en/download/  
 ##### Debian-based Linux distributions
@@ -23,7 +23,7 @@ For Ubuntu or Debian-based distributions execute `sudo apt-get install default-j
 ##### Fedora and CentOS
 There is a tutorial for installing java on Fedora and CentOS at https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora   
 
-### Youtube-dl;
+### Youtube-dl:
 ##### Windows
 Download the .exe at https://yt-dl.org/latest/youtube-dl.exe and place it in `C:\Windows\`
 ##### Linux
@@ -34,29 +34,34 @@ Use these commands in the terminal to install youtubedl on Linux:
 ## Getting the project files:
 ### Windows
 There is two ways to get the files depending on what you prefer:
-A. 
-Download the zip directly here https://github.com/UnderMybrella/EternalJukebox/archive/master.zip and extract them in any folder you like e.g. C:\EternalJukebox
-B. 
-Install Git for Windows. https://git-scm.com/downloads
-After that open the Command Prompt, move to a folder you like to have the server files. For example you can type "CD C:\Github\" (Folder has to exist)
-Then you can just use the command "git clone https://github.com/UnderMybrella/EternalJukebox.git" and the files should download to the folder you executed the command in.
+###### Without git 
+You can download the zip directly here https://github.com/UnderMybrella/EternalJukebox/archive/master.zip 
+Then extract them in any folder you like e.g. C:\EternalJukebox
+
+###### Using git
+First download and install Git for Windows from https://git-scm.com/downloads
+After that open the Command Prompt, move to a folder you like to have the server files. 
+For example you can type `CD C:\Github\` (Folder has to exist)
+
+Then you can just use the command `git clone https://github.com/UnderMybrella/EternalJukebox.git` and the files should download to the folder you executed the command in.
 
 ### Linux
-If you have a desktop environment you can just download the zip with the files directly here https://github.com/UnderMybrella/EternalJukebox/archive/master.zip and extract them in a folder you like.
-However it might be easier to use Git so you can update the files more easily!
+On Linux there is also two ways to get the files depending on what you prefer:
+###### Without git
+First off, if you have a desktop environment you can just download the zip with the files directly from https://github.com/UnderMybrella/EternalJukebox/archive/master.zip and extract them in a folder you like.  
+However it might be better to use Git so you can update the files more easily!
 
-You can generally install Git tools through the package-management tool that comes with your linux distribution.
-On Fedora you can use dnf:
-"sudo dnf install git-all"
+###### Using git
+You can generally install Git tools through the package-management tool that comes with your linux distribution.   
 
-If you're on a Debian-based distribution like Ubuntu use apt-get:
-"sudo apt-get install git-all"
+For example on **Fedora** you can use `sudo dnf install git-all`  
+And on **Debian/Ubuntu** you can use `sudo apt-get install git-all"`  
 
-After that you can move to a folder you'd like to keep the files using the cd command and then clone EternalJukebox to it with:
-"git clone https://github.com/UnderMybrella/EternalJukebox.git"
+After that you can move to a folder you'd like to keep the files using the `cd` command and then clone EternalJukebox to it with:  
+`git clone https://github.com/UnderMybrella/EternalJukebox.git`  
 
 #### Prebuilt jar
-Unless you want to build the jar yourself with Gradle you need to download it here https://eternal.abimon.org/built.jar and place it in the folder containing default-config.json and jukebox_index.html
+Unless you want to build the jar yourself with Gradle you need to download it here https://eternal.abimon.org/built.jar and place it in the folder containing `default-config.json` and `jukebox_index.html`
 
 ## Configuring
 First rename default_config.json to config.json and open it with notepad/notepad++ on windows or nano on linux "nano config.json"

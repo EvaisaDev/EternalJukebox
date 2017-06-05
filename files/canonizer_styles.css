@@ -33,10 +33,20 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
-#tiles {
-    padding-left:20px;
+#centercircle {
+	position:absolute;
+	width:900px;
+	height:680px;
+	left: calc(50% - 450px);
+	top: 25%;
 }
+#tiles {
+	position:relative;
+	margin:auto;
+}
+
+
+
 
 #footer {
     margin-top:60px;

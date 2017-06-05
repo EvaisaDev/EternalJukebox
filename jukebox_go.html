@@ -1,8 +1,8 @@
 <html>
 <head>
     <script src="files/raphael-min.js" type="text/javascript" charset="utf-8"></script>
-    <link href="files/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="files/canonizer_styles.css" type="text/css" media="screen">
+    <link href="files/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <script type="text/javascript" async="" src="files/ga.js"></script>
     <script id="twitter-wjs" src="files/widgets.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -13,13 +13,9 @@
     <script type="text/javascript" src="files/watch.js"></script>
     <link href="files/css.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" charset="utf-8" async="" src="files/button.js"></script>
-    <title> The Eternal Jukebox </title>
-
-    <meta property="og:title" content="The Eternal Jukebox"/>
-    <meta property="og:description" content="For when your favorite song just isn't long enough"/>
+    <title> Infinibox </title>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://eternal.abimon.org/jukebox_go.html?id=4uLU6hMCjMI75M1A2tKUQC.html"/>
-    <meta property="og:image" content="https://eternal.abimon.org/files/eternal.png"/>
+    <meta property="og:url" content="http://localhost:11037/jukebox_go.html?id=7BzmIUifQd3fEhpmz8nGaU"/>
 </head>
 
 <body>
@@ -33,24 +29,11 @@
             </a>
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li class="dropdown">
-                        <a id='show-search' class="brand">The Eternal Jukebox</a>
-                        <div class="dropdown-content">
-                            <a href="jukebox_index.html">The Eternal Jukebox</a>
-                            <a href="retro_index.html">The Eternal Jukebox (Retro)</a>
-                            <a href="canonizer_index.html">The Autocanonizer</a>
-                        </div>
-                    </li>
+					<li class="dropdown">
+						<a href="jukebox_index.html">Infinibox</a>
+					</li>
                     <li class="active"><a id='show-main' href="jukebox_index.html">Main</a></li>
-                    <li><a id='show-loader' href="jukebox_search.html">Pick a song</a></li>
-                    <li><a id='show-about' href="http://musicmachinery.com/2012/11/12/the-infinite-jukebox/">About</a>
-                    </li>
-                    <li><a id='show-faq' href="faq.html">FAQ</a></li>
-                    <li><a id='show-profile' href="profile.html">Profile</a></li>
-                    <li><a id='show-reddit' href="https://www.reddit.com/r/infinitejukebox/">Check out the Infinite
-                        Jukebox Reddit</a></li>
-                    <li><a id='show-discord' href="https://discord.gg/KWN5BfD">Check out the Eternal Jukebox Discord</a>
-                    </li>
+                    <li><a id='show-loader' href="jukebox_index.html">Choose a song</a></li>
                 </ul>
             </div>
         </div>
@@ -74,7 +57,9 @@
     }(document, "script", "twitter-wjs");</script>
 </span>
 </div>
-
+<div id="centercircle">
+    <div id="tiles"></div>
+</div>
 <div id='error'></div>
 <div id="hero">
     <div id="stats">
@@ -84,27 +69,13 @@
             <span id="button-panel">
                 <button class="btn btn-small" id="go">Play</button>
                 <button class="btn btn-small" id="tune">Tune</button>
-                <button class="btn btn-small" id="star">Star</button>
-                <button class="btn btn-small" id="short-url">Short URL</button>
-                <button class="btn btn-small" id="canonize">Auto Canonizer Version</button>
             </span>
         </div>
-
-        <div id="tiles"></div>
-
-        <span id="sbeats"> Total Beats: <span id="beats"> 0 </span></span>
+        <span id="sbeats"> Beats Played: <span id="beats"> 0 </span></span>
         <!--<span id='sbeats'> PC: <span id='playcount'> 0 </span></span> -->
-        <span id="stime"> Listen Time: <span id="time"> 00:00:00 </span></span>
+        <span id="stime"> Time listened: <span id="time"> 00:00:00 </span></span>
     </div>
     <hr>
-    <div class="container span11">
-        <small>
-            Originally built at <a href="http://boston.musichackday.org/">Music Hack Day @ MIT</a> by
-            <a href="http://twitter.com/plamere"> Paul Lamere </a>
-            Now hosted by <a href="https://github.com/UnderMybrella/EternalJukebox"> UnderMybrella </a> and
-            powered by <a href="http://http://spotify.com/">Spotify. </a>
-        </small>
-    </div>
 </div>
 
 
@@ -117,9 +88,17 @@
     var player;
     var driver;
     var track;
-    var W = 900, H = 680;
+    var W = window.innerWidth, H = 780;
     var paper;
-
+	var Width1 = window.innerWidth;
+	var Height1 = window.innerHeight;
+	var radial = 250;
+	if (Width1 < 900) {
+		radial = 250;
+	} else {
+		radial = 250;
+	}
+	
     // configs for chances to branch
     var defaultMinRandomBranchChance = .18
     var defaultMaxRandomBranchChance = .5
@@ -142,7 +121,7 @@
     var maxTileWidth = 90;
     var growthPerPlay = 10;
     var curGrowFactor = 1;
-
+	console.log( radial )
 
     var jukeboxData = {
         infiniteMode: true,      // if true, allow branching
@@ -242,12 +221,12 @@
     }
 
     function createTiles(qtype) {
-        return createTileCircle(qtype, 250);
+        return createTileCircle(qtype, radial);
     }
 
     function createTileCircle(qtype, radius) {
         var start = now();
-        var y_padding = 90;
+        var y_padding = 45;
         var x_padding = 200;
         var maxWidth = 90;
         var tiles = [];
@@ -487,14 +466,14 @@
     }
 
     function listPopularTracks() {
-        $.getJSON('/api/popular/jukebox', {count: 12}, function (data) {
+        $.getJSON('api/popular/jukebox', {count: 12}, function (data) {
             listTracks('#popular-list', data);
             ga_track('list', 'popular-tracks', '');
         });
     }
 
     function analyzeAudio(audio, tag, callback) {
-        var url = 'qanalyze';
+        var url = 'qanalyze'
         $.getJSON(url, {url: audio, tag: tag}, function (data) {
             if (data.status === 'done' || data.status === 'error') {
                 callback(data);
@@ -515,7 +494,7 @@
     }
 
     function fetchAnalysis(id) {
-        var url = '/api/info/' + id;
+        var url = 'api/info/' + id;
         info('Fetching the analysis');
         $.getJSON(url, function (data) {
             gotTheAnalysis(data);
@@ -1502,7 +1481,7 @@
         var q = document.URL.split('?')[1];
 
         $.ajax({
-            url: "/api/shrink",
+            url: "api/shrink",
             dataType: "json",
             type: "POST",
             data: q === undefined ? "type=jukebox" : "type=jukebox&" + q,
@@ -1519,7 +1498,7 @@
     function checkIfStarred() {
         getShareURL(function (id) {
             $.ajax({
-                url: "/api/profile/stars",
+                url: "api/profile/stars",
                 dataType: "json",
                 type: "GET",
                 success: function (data) {
@@ -1609,7 +1588,7 @@
             function () {
                 getShareURL(function (shortID) {
                     $.ajax({
-                        url: "/api/profile/stars/" + shortID,
+                        url: "api/profile/stars/" + shortID,
                         type: $("#star").text() === "Star" ? "PUT" : "DELETE",
                         headers: {
                             "X-XSRF-TOKEN": document.cookie.substring(document.cookie.indexOf("XSRF-TOKEN")).split(";")[0].split("=").slice(1).join("=")
@@ -1664,14 +1643,6 @@
             function () {
                 resetTuning();
                 ga_track('main', 'reset', '');
-            }
-        );
-
-        $("#close-tune").click(
-            function() {
-                var controls = $("#controls");
-                controls.dialog('close');
-                jukeboxData.tuningOpen = false;
             }
         );
 
@@ -1794,7 +1765,7 @@
             formData.append("file", document.getElementById('audio-upload').files[0])
 
             $.ajax({
-                url: "/api/upload/audio",
+                url: "upload/song",
                 type: "POST",
                 data: formData,
                 processData: false,
@@ -2362,7 +2333,7 @@
             info("analyzing audio");
             setDisplayMode(true);
             $("#select-track").hide();
-                analyzeAudio(url, 'tag',
+            analyzeAudio(url, 'tag',
                 function (data) {
                     if (data.status === 'done') {
                         showPlotPage(data.id);
@@ -2423,6 +2394,7 @@
     function ga_track(page, action, id) {
         _gaq.push(['_trackEvent', page, action, id]);
     }
+
 
     window.onload = init;
 
